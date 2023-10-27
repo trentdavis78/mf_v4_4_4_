@@ -1,10 +1,16 @@
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Turn off React StrictMode for now, as react-aria (used by Plasmic)
-  // has some troubles with it. See
-  // https://github.com/adobe/react-spectrum/labels/strict%20mode
-  reactStrictMode: false,
-};
+  reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'imagedelivery.net',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig
